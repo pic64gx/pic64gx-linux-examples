@@ -1,4 +1,4 @@
-# PolarFire SoC Configfs Device Tree Overlay Example
+# PIC64GX Configfs Device Tree Overlay Example
 
 Modifying the devicetree using overlays from Linux user-space using configfs
 
@@ -32,7 +32,7 @@ KERNEL_DTC_FLAGS += "-@"
 Create the dt overlay as follows:
 
 ```text
-root@icicle-kit-es:~# vim rpi-pressure.dtso
+root@pic64gx-curiosity-kit:~# vim rpi-pressure.dtso
 ```
 
 ```devicetree
@@ -56,8 +56,8 @@ root@icicle-kit-es:~# vim rpi-pressure.dtso
 Run the following commands to first compile the overlay and then apply it
 
 ```bash
-root@icicle-kit-es:~# dtc -@ -O dtb -o rpi-pressure.dtbo rpi-pressure.dtso
-root@icicle-kit-es:~# /opt/microchip/dt-overlays/overlay.sh rpi-pressure.dtbo
+root@pic64gx-curiosity-kit:~# dtc -@ -O dtb -o rpi-pressure.dtbo rpi-pressure.dtso
+root@pic64gx-curiosity-kit:~# /opt/microchip/dt-overlays/overlay.sh rpi-pressure.dtbo
 ```
 
 The following kernel config options are needed for the lps25h pressure sensor
@@ -70,8 +70,8 @@ in the `/boot` directory.
 The following commands can be used to load this overlay:
 
 ```bash
-root@icicle-kit-es:~# cd /boot/
-root@icicle-kit-es:/boot# /opt/microchip/dt-overlays/overlay.sh mpfs_icicle_rpi_sense_hat.dtbo
+root@pic64gx-curiosity-kit:~# cd /boot/
+root@pic64gx-curiosity-kit:/boot# /opt/microchip/dt-overlays/overlay.sh pic64gx-curiosity-kit_rpi_sense_hat.dtbo
 ```
 
 You should then see the drivers get loaded for the sensehat and the sensors on
@@ -80,6 +80,6 @@ To check how overlay has been applied, we can examine the running kernel's
 devicetree:
 
 ```bash
-root@icicle-kit-es:/boot# dtc -I fs /sys/firmware/devicetree/base > icicle.dts
-root@icicle-kit-es:/boot# vim icicle.dts
+root@pic64gx-curiosity-kit:/boot# dtc -I fs /sys/firmware/devicetree/base > pic64gx-curiosity-kit.dts
+root@pic64gx-curiosity-kit:/boot# vim pic64gx-curiosity-kit.dts
 ```

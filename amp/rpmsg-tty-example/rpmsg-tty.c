@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 /*
- * RPMsg TTY example for the Microchip PolarFire SoC
+ * RPMsg TTY example for the Microchip PIC63GX
  *
- * Copyright (c) 2021 Microchip Technology Inc. All rights reserved.
+ * Copyright (c) 2021-2024 Microchip Technology Inc. All rights reserved.
  */
 
 #include <stdio.h>

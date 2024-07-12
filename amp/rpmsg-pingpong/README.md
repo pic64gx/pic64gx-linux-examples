@@ -1,4 +1,4 @@
-# PolarFire SoC AMP RPMsg PingPong Example
+# PIC64GX AMP RPMsg PingPong Example
 
 This application can be used to test data integrity of inter-hart communication
 from linux userspace to a remote software context.
@@ -13,17 +13,17 @@ control interface (/dev/rpmsg_ctrlX) and exposes the endpoint to user space by
 creating a /dev/rpmsgX device.
 
 For more information on RPMsg protocol, please refer to the
-[PolarFire SoC RPMsg documentation][1].
+[PIC64GX RPMsg documentation][1].
 
-[1]: https://mi-v-ecosystem.github.io/redirects/asymmetric-multiprocessing_rpmsg
+[1]: https://ww1.microchip.com/downloads/aemDocuments/documents/MPU64/ProductDocuments/SupportingCollateral/Booting_Application_Workloads_on_PIC64GX_White_Paper.pdf
 
 ## Pre-requisites
 
-This application should be run on a PolarFire SoC configured in AMP mode.
-Instructions on how to run a Linux + FreeRTOS AMP configuration using Yocto or
-Buildroot can be found in the [PolarFire SoC AMP documentation][2].
+This application should be run on a PIC64GX configured in AMP mode.
+Instructions on how to run a Linux + Zephyr AMP configuration using Yocto or
+Buildroot can be found in the [PIC64GX AMP documentation][2].
 
-[2]: https://mi-v-ecosystem.github.io/redirects/asymmetric-multiprocessing_amp
+[2]: https://ww1.microchip.com/downloads/aemDocuments/documents/MPU64/ProductDocuments/SupportingCollateral/Booting_Application_Workloads_on_PIC64GX_White_Paper.pdf
 
 ## Building the Application
 
@@ -53,7 +53,7 @@ destination address: 0xFFFFFFFF
 Once run, the following information should be displayed on the console:
 
 ```text
-root@icicle-kit-es-amp: ./rpmsg-pingpong
+root@pic64gx-curiosity-kit-amp: ./rpmsg-pingpong
         Open rpmsg dev virtio0.rpmsg-amp-demo-channel.-1.0!
         Opening file rpmsg_ctrl0.
         checking /sys/class/rpmsg/rpmsg_ctrl0/rpmsg0/name
