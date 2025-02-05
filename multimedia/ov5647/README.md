@@ -8,9 +8,7 @@ The OV5647 camera example scripts perform the following tasks:
 ## Prerequisites
 
 - PIC64GX Curiosity Kit.
-- HDMI monitor supporting 720p resolution.
 - OV5647 camera with 25MHz clock.
-- HDMI cable connected from the PIC64GX Curiosity Kit to the monitor
 - Type-C cable to power up the board and console access.
 
 ### Basic check for video pipeline enumerated after boot
@@ -26,10 +24,6 @@ A successful execution should look like:
 ```bash
 root@pic64gx-curiosity-kit:~# v4l2-ctl --list-devices
 MCHP Camera Media Pipeline (platform:mchp-vcpp):
-        /dev/video1
-        /dev/media1
-
-MCHP Video Out Media Pipeline (platform:mchp-vout):
         /dev/video0
         /dev/media0
 ```
